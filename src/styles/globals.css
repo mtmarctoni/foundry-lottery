@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-radius: var(--radius);
+}
+
+/* * {
+  @apply border-border;
+} */
+body {
+  @apply bg-background text-foreground transition-colors duration-300;
+}
+
+.bg-gradient-lottery {
+  @apply bg-gradient-to-br from-primary via-background to-secondary;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.border-gradient {
+  @apply border border-transparent bg-gradient-to-r from-primary/30 to-secondary/30 bg-origin-border;
+}
+
+.hover-card-effect {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 dark:hover:shadow-primary/20;
+}
+
+:root {
+  /* Base colors */
+  --background: #ffffff;
+  --foreground: #010816;
+
+  /* Card colors */
+  --card: #ffffff;
+  --card-foreground: #010816;
+
+  /* Popover colors */
+  --popover: #ffffff;
+  --popover-foreground: #010816;
+
+  /* Primary colors - Vibrant purple */
+  --primary: #751fdf;
+  --primary-foreground: #f7f9fb;
+
+  /* Secondary colors - Teal accent */
+  --secondary: #22c3c3;
+  --secondary-foreground: #0f172a;
+
+  /* Muted colors */
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  /* Accent colors */
+  --accent: #f1e8fb;
+  --accent-foreground: #0f172a;
+
+  /* Destructive colors */
+  --destructive: #ee4444;
+  --destructive-foreground: #f7f9fb;
+
+  /* Border and input colors */
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #751fdf;
+
+  /* Success colors */
+  --success: #22c35d;
+  --success-foreground: #f7f9fb;
+
+  /* Warning colors */
+  --warning: #f49e0a;
+  --warning-foreground: #f7f9fb;
+
+  /* Border radius */
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Base colors */
+  --background: #010816;
+  --foreground: #f7f9fb;
+
+  /* Card colors */
+  --card: #010816;
+  --card-foreground: #f7f9fb;
+
+  /* Popover colors */
+  --popover: #010816;
+  --popover-foreground: #f7f9fb;
+
+  /* Primary colors - Vibrant purple */
+  --primary: #914ce5;
+  --primary-foreground: #f7f9fb;
+
+  /* Secondary colors - Teal accent */
+  --secondary: #1eadad;
+  --secondary-foreground: #f7f9fb;
+
+  /* Muted colors */
+  --muted: #1e293b;
+  --muted-foreground: #94a3b7;
+
+  /* Accent colors */
+  --accent: #461385;
+  --accent-foreground: #f7f9fb;
+
+  /* Destructive colors */
+  --destructive: #7f1d1d;
+  --destructive-foreground: #f7f9fb;
+
+  /* Border and input colors */
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #914ce5;
+
+  /* Success colors */
+  --success: #1ead52;
+  --success-foreground: #f7f9fb;
+
+  /* Warning colors */
+  --warning: #dc8e09;
+  --warning-foreground: #f7f9fb;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
