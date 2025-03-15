@@ -41,7 +41,8 @@ export function EnterLottery({ lotteryContract, entranceFee, lotteryState, onEnt
       })
 
       onEntered()
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as Error;
       console.error("Error entering lottery:", error)
       toast({
         title: "Transaction Failed",

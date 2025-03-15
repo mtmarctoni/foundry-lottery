@@ -42,7 +42,8 @@ export function WinnerSection({ recentWinner, address, lotteryContract, onClaime
       })
 
       onClaimed()
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as Error;
       console.error("Error claiming prize:", error)
       toast({
         title: "Transaction Failed",

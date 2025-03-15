@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme()
+  const { setTheme } = useTheme()
 
   return (
     <DropdownMenu>
@@ -18,11 +18,11 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem className="hover:bg-foreground/30"
+        <DropdownMenuItem
           onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-        <DropdownMenuItem className="hover:bg-foreground/30"
+        <DropdownMenuItem
           onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-        <DropdownMenuItem className="hover:bg-foreground/30"
+        <DropdownMenuItem
           onClick={() => setTheme("system")}>System</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

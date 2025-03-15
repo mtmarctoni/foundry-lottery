@@ -29,15 +29,15 @@ import {AutomationCompatibleInterface} from "@chainlink/contracts/src/v0.8/inter
 /**
  * @title A sample Lottery Contract
  * @author mtmarctoni
- * @notice This contract is for creating a sample raffle contract
+ * @notice This contract is for creating a sample lottery contract
  * @dev This implements the Chainlink VRF Version 2
  */
 contract Lottery is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
     /* Errors */
     error Lottery__UpkeepNotNeeded(uint256 currentBalance, uint256 numPlayers, uint256 lotteryState);
     error Lottery__TransferFailed();
-    error Lottery__SendMoreToEnterRaffle();
-    error Lottery__RaffleNotOpen();
+    error Lottery__SendMoreToEnterLottery();
+    error Lottery__LotteryNotOpen();
 
     /* Type declarations */
     enum LotteryState {
@@ -59,7 +59,7 @@ contract Lottery is VRFConsumerBaseV2Plus, AutomationCompatibleInterface {
     uint256 private s_lastTimeStamp;
     address private s_recentWinner;
     address payable[] private s_players;
-    RaffleState private s_raffleState;
+    LooteryState private s_lotteryState;
 
     /* Events */
     event RequestedLotteryWinner(uint256 indexed requestId);

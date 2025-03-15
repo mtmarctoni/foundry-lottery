@@ -64,7 +64,8 @@ export function AdminPanel({ lotteryContract, lotteryState, onAction }: AdminPan
       })
 
       onAction()
-    } catch (error: any) {
+    } catch (err: unknown) {
+      const error = err as Error;
       console.error(`Error performing ${action}:`, error)
       toast({
         title: "Transaction Failed",
