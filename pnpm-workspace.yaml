@@ -3,3 +3,12 @@ onlyBuiltDependencies:
   - keccak
   - sharp
   - utf-8-validate
+# 2026-10-25 security overrides (CVE remediation). Remove once the parents ship patched pins.
+# lodash: @walletconnect/universal-provider 2.19.0 (via wagmi) pins 4.17.21
+#   (GHSA-r5fr-rjxr-66jc, GHSA-f23m-r3pf-42rh, GHSA-xxjr-mmjv-4gpg; fixed in 4.18.0).
+# ws@8: ethers 6.13.5 pins 8.17.1, viem 2.23.x pins 8.18.x, engine.io-client 6.6.3 wants ~8.17.1
+#   (forced past its declared range; same major, Node-only, not in the browser bundle)
+#   (GHSA-96hv-2xvq-fx4p fixed in 8.21.0, GHSA-58qx-3vcg-4xpx fixed in 8.20.1).
+overrides:
+  lodash@4: ^4.18.0
+  ws@8: ^8.21.0
